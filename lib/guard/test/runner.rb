@@ -73,6 +73,9 @@ module Guard
           cmd_parts << '--use-color'
           cmd_parts << '--runner=guard'
         end
+	if drb?
+		cmd_parts << '--notify'
+	end
 
         cmd_parts << @options[:cli]
 
